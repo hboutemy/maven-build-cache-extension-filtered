@@ -17,6 +17,7 @@ package org.apache.maven.artifact.repository;
  * ====================================================================
  */
 
+import org.apache.maven.artifact.repository.layout.ArtifactRepositoryLayout;
 import org.apache.maven.model.Repository;
 import org.apache.maven.settings.MavenSettings;
 
@@ -28,6 +29,7 @@ public interface ArtifactRepositoryFactory
 
     public static final String ROLE = ArtifactRepositoryFactory.class.getName();
 
-    public ArtifactRepository createArtifactRepository( Repository modelRepository, MavenSettings settings );
+    public ArtifactRepository createArtifactRepository( Repository modelRepository, MavenSettings settings,
+                                                       ArtifactRepositoryLayout repositoryLayout );
 
 }
