@@ -30,6 +30,6 @@ public class PluginNotFoundException
     public PluginNotFoundException( ArtifactResolutionException e )
     {
         super( "Mojo could not be found - check that the goal name is correct", e.getGroupId(), e.getArtifactId(),
-               e.getVersion(), "maven-plugin", e.getRemoteRepositories(), e );
+               e.getVersion(), "maven-plugin", e.getRemoteRepositories(), e.getDownloadUrl(), e );
     }
 }
