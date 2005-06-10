@@ -1,4 +1,4 @@
-package org.apache.maven.lifecycle;
+package org.apache.maven.lifecycle.mapping;
 
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
@@ -16,25 +16,22 @@ package org.apache.maven.lifecycle;
  * limitations under the License.
  */
 
-import org.codehaus.plexus.PlexusTestCase;
-import org.apache.maven.lifecycle.mapping.LifecycleMapping;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
- * @author <a href="mailto:jason@maven.org">Jason van Zyl</a>
+ * Lifecycle mapping for a POM.
+ *
+ * @author <a href="mailto:brett@apache.org">Brett Porter</a>
  * @version $Id$
  */
-public class LifecycleExecutorTest
-    extends PlexusTestCase
+public class DefaultLifecycleMapping
+    implements LifecycleMapping
 {
-    public void testLifecycleExecutor()
-        throws Exception
+    private Map phases = new HashMap();
+
+    public Map getPhases()
     {
-        LifecycleExecutor le = (LifecycleExecutor) lookup( LifecycleExecutor.ROLE );
-
-        LifecycleMapping m = (LifecycleMapping) lookup( LifecycleMapping.ROLE, "pom" );
-
-        assertEquals( 16, le.getPhases().size() );
-
-        //le.execute( "test", createGoalExecutionContext().getSession() );
+        return phases;
     }
 }
