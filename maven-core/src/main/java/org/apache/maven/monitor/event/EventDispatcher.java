@@ -1,4 +1,6 @@
-package org.apache.maven.usability.plugin;/*
+package org.apache.maven.monitor.event;
+
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -17,19 +19,18 @@ package org.apache.maven.usability.plugin;/*
  * under the License.
  */
 
-public class ExpressionDocumentationException
-    extends Exception
+/**
+ * @author jdcasey
+ */
+public interface EventDispatcher
 {
-    static final long serialVersionUID = 1;
 
-    public ExpressionDocumentationException( String message, Throwable cause )
-    {
-        super( message, cause );
-    }
+    void addEventMonitor( EventMonitor monitor );
 
-    public ExpressionDocumentationException( String message )
-    {
-        super( message );
-    }
+    void dispatchStart( String event, String target );
+
+    void dispatchEnd( String event, String target );
+
+    void dispatchError( String event, String target, Throwable cause );
 
 }

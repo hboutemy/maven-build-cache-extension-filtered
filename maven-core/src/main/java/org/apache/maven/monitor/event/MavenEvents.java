@@ -1,4 +1,6 @@
-package org.apache.maven.usability;/*
+package org.apache.maven.monitor.event;
+
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -17,13 +19,28 @@ package org.apache.maven.usability;/*
  * under the License.
  */
 
-public class SystemWarnings
+/**
+ * @author jdcasey
+ */
+public final class MavenEvents
 {
 
-    public static String getOfflineWarning()
+    public static final String PHASE_EXECUTION = "phase-execute";
+    public static final String MOJO_EXECUTION = "mojo-execute";
+    public static final String PROJECT_EXECUTION = "project-execute";
+    public static final String REACTOR_EXECUTION = "reactor-execute";
+    
+    public static final String[] ALL_EVENTS = {
+        PHASE_EXECUTION,
+        MOJO_EXECUTION,
+        PROJECT_EXECUTION,
+        REACTOR_EXECUTION
+    };
+    
+    public static final String[] NO_EVENTS = {};
+    
+    private MavenEvents()
     {
-        return "\nNOTE: Maven is executing in offline mode. Any artifacts not already in your local\n" +
-            "repository will be inaccessible.\n";
     }
 
 }
