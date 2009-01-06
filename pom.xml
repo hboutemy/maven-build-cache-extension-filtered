@@ -430,17 +430,58 @@ under the License.
           </exclusion>
         </exclusions>
       </dependency>
+
       <!--  Mercury -->
       <dependency>
         <groupId>org.apache.maven.mercury</groupId>
         <artifactId>mercury-artifact</artifactId>
         <version>${mercuryVersion}</version>
       </dependency>
-        <dependency>
+      <dependency>
         <groupId>org.apache.maven.mercury</groupId>
         <artifactId>mercury-external</artifactId>
         <version>${mercuryVersion}</version>
       </dependency>
+      
+      <!--  Mercury test dependencies -->
+      <dependency>
+        <groupId>org.apache.maven.mercury</groupId>
+        <artifactId>mercury-repo-local-m2</artifactId>
+        <version>${mercuryVersion}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.mercury</groupId>
+        <artifactId>mercury-repo-remote-m2</artifactId>
+        <version>${mercuryVersion}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.mercury</groupId>
+        <artifactId>mercury-md-sat</artifactId>
+        <version>${mercuryVersion}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.mercury</groupId>
+        <artifactId>mercury-util</artifactId>
+        <version>${mercuryVersion}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.mercury</groupId>
+        <artifactId>mercury-transport-http</artifactId>
+        <version>${mercuryVersion}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.mercury</groupId>
+        <artifactId>mercury-transport-http</artifactId>
+        <version>${mercuryVersion}</version>
+        <type>test-jar</type>
+        <scope>test</scope>
+      </dependency>
+
       <!-- Needed for backward compat aspect. -->
       <dependency>
         <groupId>aspectj</groupId>
