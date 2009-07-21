@@ -87,6 +87,7 @@ public abstract class AbstractCoreMavenComponentTestCase
         MavenExecutionRequest request = new DefaultMavenExecutionRequest()
             .setPom( pom )
             .setProjectPresent( true )
+            .setShowErrors( true )
             .setPluginGroups( Arrays.asList( new String[] { "org.apache.maven.plugins" } ) )
             .setLocalRepository( getLocalRepository() )
             .setRemoteRepositories( getRemoteRepositories() )
