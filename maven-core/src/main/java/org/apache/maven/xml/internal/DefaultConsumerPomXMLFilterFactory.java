@@ -20,7 +20,7 @@ package org.apache.maven.xml.internal;
  */
 
 import org.apache.maven.model.building.DefaultBuildPomXMLFilterFactory;
-import org.apache.maven.xml.sax.filter.ConsumerPomXMLFilterFactory;
+import org.apache.maven.model.transform.ConsumerPomXMLFilterFactory;
 
 /**
  * The default implementation of the {@link ConsumerPomXMLFilterFactory}
